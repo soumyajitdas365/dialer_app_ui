@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:dialer_app_ui/screens/CallingScreen.dart';
+import 'package:dialer_app_ui/screens/dialingscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,6 +18,6 @@ class MyApp extends StatelessWidget {
           fontFamily: "SF UI",
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: CallingScreen());
+        home: DialingScreen());
   }
 }

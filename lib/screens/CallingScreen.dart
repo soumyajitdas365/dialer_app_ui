@@ -1,5 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, file_names, prefer_const_constructors, deprecated_member_use, prefer_const_literals_to_create_immutables
 
+import 'package:dialer_app_ui/konstants.dart';
+import 'package:dialer_app_ui/screens/widgets/actionbuttion.dart';
 import 'package:dialer_app_ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -54,7 +56,7 @@ class CallingScreen extends StatelessWidget {
                         iconColor: Colors.black,
                       ),
                       ActionButton(
-                        buttonColor: Colors.red,
+                        buttonColor: kRedColor,
                         iconAsset: 'assets/icons/call_end.svg',
                         onPress: () {},
                         iconColor: Colors.white,
@@ -73,38 +75,6 @@ class CallingScreen extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-}
-
-class ActionButton extends StatelessWidget {
-  const ActionButton({
-    Key? key,
-    required this.iconColor,
-    required this.buttonColor,
-    required this.iconAsset,
-    required this.onPress,
-  }) : super(key: key);
-
-  final Color iconColor, buttonColor;
-  final String iconAsset;
-  final VoidCallback onPress;
-  final double size = 55;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: getProportionateScreenWidth(size),
-      width: getProportionateScreenHeight(size),
-      child: FlatButton(
-          padding: EdgeInsets.all(15 / 64 * size),
-          color: buttonColor,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-          onPressed: onPress,
-          child: SvgPicture.asset(
-            iconAsset,
-            color: iconColor,
-          )),
     );
   }
 }
